@@ -73,8 +73,10 @@ const PatientList = () => {
   // Filtrar pacientes por data completa
   const filteredPatients = groupedPatients[selectedDate.toDateString()] || [];
 
+  const [isIframeVisible, setIframeVisible] = useState(false);
+
   const handleExternalLink = () => {
-    window.open("https://www.appsheet.com/start/ed2be4b3-ca16-434b-a258-0c84007a65bf#appName=MarisaCare-04-640720421&page=form&row=&table=P%C3%A1gina1&view=Formul%C3%A1rio", "_blank");
+    setIframeVisible(true);
   };
 
   return (
@@ -100,7 +102,23 @@ const PatientList = () => {
             ))}
           </ul>
         </div>
-        <button onClick={handleExternalLink}>Abrir App Externo</button>
+         <button onClick={handleExternalLink}>Abrir App Externo</button>
+
+      {isIframeVisible && (
+        <iframe
+          src="https://www.appsheet.com/start/ed2be4b3-ca16-434b-a258-0c84007a65bf#appName=MarisaCare-04-640720421&page=form&row=&table=P%C3%A1gina1&view=Formul%C3%A1rio"
+          title="External App"
+          className="external-iframe"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: "none",
+          }}
+        />
+      )}
       </div>
       {selectedPatient && (
         <div className="popup-overlay">
