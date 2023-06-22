@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 import Sidebar from "../sidebar";
 import "./../../index.css";
 import logo from './../../assets/marisa.png';
 
 const PatientList = () => {
 
-
-  const groupedPatients = {};
-
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
