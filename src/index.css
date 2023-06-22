@@ -122,8 +122,8 @@
   }
   
   .logo {
-    width: 150px;
-    height: 120px;
+    width: 283px;
+    height: 113px;
   }
 
   .popup-overlay {
@@ -167,3 +167,38 @@
     background-color: #f0f0f0;
     transform: scale(1.05);
   }
+
+  .text-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .main-text {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-button-container {
+    margin-top: 100px;
+  }
+
+  .form-button {
+    background-color: #26b0cd;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  
