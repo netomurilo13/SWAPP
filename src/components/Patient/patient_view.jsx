@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./../../index.css";
 import logo from './../../assets/galileu_azul.png';
+import TagManager from 'react-gtm-module';
 
 const PatientList = () => {
   const [isIframeVisible, setIframeVisible] = useState(false);
   const [isButtonClicked, setButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const tagManagerArgs = {
+      gtmId: 'G-SH9HRC1WCT' 
+    };
+    TagManager.initialize(tagManagerArgs);
+  }, []);
 
   const handleExternalLink = () => {
     setIframeVisible(true);
@@ -53,5 +61,3 @@ const PatientList = () => {
 };
 
 export default PatientList;
-
-
