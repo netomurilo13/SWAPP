@@ -1,17 +1,15 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./../../index.css";
 import logo from './../../assets/galileu_azul.png';
 
 const PatientList = () => {
   const [isIframeVisible, setIframeVisible] = useState(false);
-  const [parameter, setParameter] = useState("");
+  const location = useLocation();
+  const parameter = new URLSearchParams(location.search).get("parameter");
 
   const handleExternalLink = () => {
     setIframeVisible(true);
-  };
-
-  const handleChangeParameter = (event) => {
-    setParameter(event.target.value);
   };
 
   return (
@@ -26,9 +24,6 @@ const PatientList = () => {
               política de proteção de dados e privacidade
             </a>.
           </p>
-          <div className="form-input-container">
-            <input type="text" value={parameter} onChange={handleChangeParameter} placeholder="Digite o parâmetro" />
-          </div>
           <div className="form-button-container">
             <button className="form-button" onClick={handleExternalLink}>
               Abrir Formulário

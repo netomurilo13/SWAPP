@@ -2,15 +2,18 @@ import React from 'react';
 import './index.css';
 import 'react-calendar/dist/Calendar.css';
 import PatientList from './components/Patient/patient_view';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <PatientList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PatientList />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
