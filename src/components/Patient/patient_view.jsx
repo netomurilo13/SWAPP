@@ -33,6 +33,7 @@ const PatientList = () => {
       </div>
       {isIframeVisible && (
         <iframe
+          key={parameter}
           src={`https://www.appsheet.com/start/ed2be4b3-ca16-434b-a258-0c84007a65bf#appName=MarisaCare-04-640720421&page=form&row=${parameter}&table=P%C3%A1gina1&view=Formul%C3%A1rio`}
           title="External App"
           className="external-iframe"
