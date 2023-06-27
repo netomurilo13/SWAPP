@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import "./../../index.css";
 import logo from './../../assets/galileu_azul.png';
 
 const PatientList = () => {
   const [isIframeVisible, setIframeVisible] = useState(false);
-  const location = useLocation();
-  const parameter = new URLSearchParams(location.search).get("parameter");
+  const [isButtonClicked, setButtonClicked] = useState(false);
 
   const handleExternalLink = () => {
     setIframeVisible(true);
+    setButtonClicked(true);
   };
 
   return (
@@ -25,16 +24,17 @@ const PatientList = () => {
             </a>.
           </p>
           <div className="form-button-container">
-            <button className="form-button" onClick={handleExternalLink}>
-              Abrir Formulário
-            </button>
+            {!isButtonClicked && (
+              <button className="form-button" onClick={handleExternalLink}>
+                Abrir Formulário
+              </button>
+            )}
           </div>
         </div>
       </div>
       {isIframeVisible && (
         <iframe
-          key={parameter}
-          src={`https://www.appsheet.com/start/ed2be4b3-ca16-434b-a258-0c84007a65bf#appName=MarisaCare-04-640720421&page=form&row=${parameter}&table=P%C3%A1gina1&view=Formul%C3%A1rio`}
+          src={`https://www.appsheet.com/start/e81f77d3-5b6c-4408-a07e-ae254943a988#appName=Galileu_backup-640720421&page=form&row=&table=P%C3%A1gina1&view=Formul%C3%A1rio`}
           title="External App"
           className="external-iframe"
           style={{
@@ -45,6 +45,7 @@ const PatientList = () => {
             height: "100%",
             border: "none",
           }}
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
         />
       )}
     </div>
@@ -52,3 +53,5 @@ const PatientList = () => {
 };
 
 export default PatientList;
+
+
