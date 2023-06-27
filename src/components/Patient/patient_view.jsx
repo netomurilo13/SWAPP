@@ -4,9 +4,14 @@ import logo from './../../assets/galileu_azul.png';
 
 const PatientList = () => {
   const [isIframeVisible, setIframeVisible] = useState(false);
+  const [parameter, setParameter] = useState("");
 
   const handleExternalLink = () => {
     setIframeVisible(true);
+  };
+
+  const handleChangeParameter = (event) => {
+    setParameter(event.target.value);
   };
 
   return (
@@ -20,8 +25,10 @@ const PatientList = () => {
             <a href="https://i9.med.br/termos-de-uso-da-plataforma-i9med-saude-digital/" target="_blank" rel="noopener noreferrer">
               política de proteção de dados e privacidade
             </a>.
-            Para acessar o formulário, clique no botão abaixo:
           </p>
+          <div className="form-input-container">
+            <input type="text" value={parameter} onChange={handleChangeParameter} placeholder="Digite o parâmetro" />
+          </div>
           <div className="form-button-container">
             <button className="form-button" onClick={handleExternalLink}>
               Abrir Formulário
@@ -31,7 +38,7 @@ const PatientList = () => {
       </div>
       {isIframeVisible && (
         <iframe
-          src="https://www.appsheet.com/start/ed2be4b3-ca16-434b-a258-0c84007a65bf#appName=MarisaCare-04-640720421&page=form&row=&table=P%C3%A1gina1&view=Formul%C3%A1rio"
+          src={`https://www.appsheet.com/start/ed2be4b3-ca16-434b-a258-0c84007a65bf#appName=MarisaCare-04-640720421&page=form&row=${parameter}&table=P%C3%A1gina1&view=Formul%C3%A1rio`}
           title="External App"
           className="external-iframe"
           style={{

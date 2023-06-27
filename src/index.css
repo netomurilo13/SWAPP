@@ -201,4 +201,9 @@
   .form-button:hover {
     background-color: #45a049;
   }
+
+  .form-input-container {
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
   
