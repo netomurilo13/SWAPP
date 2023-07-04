@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './index.css';
 import 'react-calendar/dist/Calendar.css';
 import { Helmet } from 'react-helmet';
@@ -7,6 +7,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ThankYouPage from './components/finish/finish_view';
 
 const App = () => {
+  useEffect(() => {
+    // Código do Clarity
+    (function(c, l, a, r, i, t, y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "hu38pquue3");
+  }, []);
+
   return (
     <Router>
       <Helmet>
