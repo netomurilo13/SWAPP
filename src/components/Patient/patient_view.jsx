@@ -15,9 +15,9 @@ const PatientList = () => {
 
   let logoImage;
   if (currentURL.includes("apresentacaohra")) {
-    logoImage = logo1;
-  } else {
     logoImage = logo2;
+  } else {
+    logoImage = logo1;
   } 
 
   useEffect(() => {
