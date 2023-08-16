@@ -46,14 +46,14 @@ const PatientList = () => {
   if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med && encodeParameter !== demo) {
     errorMessage = (
       <div className="error-container">
-        <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
+        <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px", height: logoImage === logo1 ? "113px" : "260px", width: logoImage === logo1 ? "283px" : "269px" }} />
         <p className="error-message">Link inválido. Favor solicitar novamente o link de acesso a essa aplicação.</p>
       </div>
     );
   } else {
     content = (
       <div className="content">
-        <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
+        <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px", height: logoImage === logo1 ? "113px" : "260px", width: logoImage === logo1 ? "283px" : "269px" }} />
         <div className="text-container">
           <p className="main-text">
             Todas as informações que você ceder para mim serão usadas para fornecer uma melhor consulta médica para você!
