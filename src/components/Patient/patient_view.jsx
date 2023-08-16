@@ -9,13 +9,17 @@ const PatientList = () => {
   const [isIframeVisible, setIframeVisible] = useState(false);
   const [isButtonClicked, setButtonClicked] = useState(false);
   const location = useLocation();
-  const parameter = new URLSearchParams(location.search).get("parameter");
+  const demo = "%7B%0A%22group%22%3A%20%22Demo%22%0A%7D"
+  let parameter = new URLSearchParams(location.search).get("parameter");
+  let validState = true;
   const currentURL = window.location.href;
     console.log('URL completa:', currentURL);
 
   let logoImage;
   if (currentURL.includes("apresentacaohra")) {
     logoImage = logo2;
+    validState = false;
+    parameter = decodeURIComponent(demo);
   } else {
     logoImage = logo1;
   } 
@@ -36,14 +40,13 @@ const PatientList = () => {
   const taruma = "%7B%0A%22group%22%20%3A%20%22Tarum%C3%A3%22%0A%7D";
   const i9med = "%7B%0A%22group%22%20%3A%20%22i9med%22%0A%7D";
   const conveniados = "%7B%0A%22group%22%20%3A%20%22Piloto%20Galileu%C2%A0CEJAM%22%0A%7D";
-  const demo = "%7B%0A%22group%22%3A%20%22Demo%22%0A%7D"
   console.log(taruma === encodeParameter)
 
 
   let errorMessage = null;
   let content = null;
 
-  if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med && encodeParameter !== demo) {
+  if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med && validState === true) {
     errorMessage = (
       <div className="error-container">
         <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px", height: logoImage === logo1 ? "113px" : "260px", width: logoImage === logo1 ? "283px" : "269px" }} />
