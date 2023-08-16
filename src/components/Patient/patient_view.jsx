@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./../../index.css";
-import logo from './../../assets/galileu_azul.png';
+import logo1 from './../../assets/galileu_azul.png';
+import logo2 from './../../assets/saude.png';
 import TagManager from 'react-gtm-module';
 import { useLocation } from "react-router-dom";
 
@@ -9,6 +10,15 @@ const PatientList = () => {
   const [isButtonClicked, setButtonClicked] = useState(false);
   const location = useLocation();
   const parameter = new URLSearchParams(location.search).get("parameter");
+  const pathName = location.pathname;
+  console.log(pathName)
+
+  let logoImage;
+  if (pathName.includes("apresentacaohra")) {
+    logoImage = logo1;
+  } else {
+    logoImage = logo2;
+  } 
 
   useEffect(() => {
     const tagManagerArgs = {
@@ -26,23 +36,24 @@ const PatientList = () => {
   const taruma = "%7B%0A%22group%22%20%3A%20%22Tarum%C3%A3%22%0A%7D";
   const i9med = "%7B%0A%22group%22%20%3A%20%22i9med%22%0A%7D";
   const conveniados = "%7B%0A%22group%22%20%3A%20%22Piloto%20Galileu%C2%A0CEJAM%22%0A%7D";
+  const demo = "%7B%0A%22group%22%3A%20%22Demo%22%0A%7D"
   console.log(taruma === encodeParameter)
 
 
   let errorMessage = null;
   let content = null;
 
-  if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med) {
+  if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med && encodeParameter !== demo) {
     errorMessage = (
       <div className="error-container">
-        <img src={logo} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
+        <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
         <p className="error-message">Link inválido. Favor solicitar novamente o link de acesso a essa aplicação.</p>
       </div>
     );
   } else {
     content = (
       <div className="content">
-        <img src={logo} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
+        <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
         <div className="text-container">
           <p className="main-text">
             Todas as informações que você ceder para mim serão usadas para fornecer uma melhor consulta médica para você!
