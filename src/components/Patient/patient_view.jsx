@@ -10,11 +10,11 @@ const PatientList = () => {
   const [isButtonClicked, setButtonClicked] = useState(false);
   const location = useLocation();
   const parameter = new URLSearchParams(location.search).get("parameter");
-  const pathName = location.pathname;
-  console.log(pathName)
+  const currentURL = window.location.href;
+    console.log('URL completa:', currentURL);
 
   let logoImage;
-  if (pathName.includes("apresentacaohra")) {
+  if (currentURL.includes("apresentacaohra")) {
     logoImage = logo1;
   } else {
     logoImage = logo2;
