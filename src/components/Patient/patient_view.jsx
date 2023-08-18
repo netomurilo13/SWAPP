@@ -40,13 +40,14 @@ const PatientList = () => {
   const taruma = "%7B%0A%22group%22%20%3A%20%22Tarum%C3%A3%22%0A%7D";
   const i9med = "%7B%0A%22group%22%20%3A%20%22i9med%22%0A%7D";
   const conveniados = "%7B%0A%22group%22%20%3A%20%22Piloto%20Galileu%C2%A0CEJAM%22%0A%7D";
+  const saude = "%7B%0A%22group%22%3A%20%22Sa%C3%BAde%20da%20Fam%C3%ADlia%20Digital%22%0A%7D"
   console.log(taruma === encodeParameter)
 
 
   let errorMessage = null;
   let content = null;
 
-  if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med && validState === true) {
+  if (encodeParameter !== taruma && encodeParameter !== conveniados && encodeParameter !== i9med && validState === true && encodeParameter !== saude) {
     errorMessage = (
       <div className="error-container">
         <img src={logoImage} alt="Logo" className="logo" style={{ marginBottom: "100px", height: logoImage === logo1 ? "113px" : "260px", width: logoImage === logo1 ? "283px" : "269px" }} />
