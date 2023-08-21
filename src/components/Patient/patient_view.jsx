@@ -20,7 +20,9 @@ const PatientList = () => {
     logoImage = logo2;
     validState = false;
     parameter = decodeURIComponent(demo);
-  } else {
+  } else if(currentURL.includes("%7B%0A%22group%22%3A%20%22Sa%C3%BAde%20da%20Fam%C3%ADlia%20Digital%22%0A%7D")){
+    logoImage = logo2;
+  }else {
     logoImage = logo1;
   } 
 
