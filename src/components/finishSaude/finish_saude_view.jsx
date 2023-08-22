@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './../../assets/galileu_azul.png';
+import logo from './../../assets/saude.png';
 import "./index.css"
 
-const ThankYouPage = () => {
+const ThankYouPageSaude = () => {
   return (
     <div className="thank-you-page">
       <img src={logo} alt="Logo" className="logo" style={{ marginBottom: "100px" }} />
@@ -12,4 +12,4 @@ const ThankYouPage = () => {
   );
 };
 
-export default ThankYouPage;
+export default ThankYouPageSaude;

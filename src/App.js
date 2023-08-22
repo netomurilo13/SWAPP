@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import PatientList from './components/Patient/patient_view';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ThankYouPage from './components/finish/finish_view';
+import ThankYouPageSaude from './components/finishSaude/finish_saude_view';
 
 const App = () => {
   useEffect(() => {
@@ -33,6 +34,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<PatientList />} />
         <Route path="/thankyou" element={<ThankYouPage />} />
+        <Route path="/thanksyou" element={<ThankYouPageSaude />} />
       </Routes>
     </Router>
   );
