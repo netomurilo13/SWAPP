@@ -71,8 +71,8 @@ const PatientList = () => {
           className="logo"
           style={{
             marginBottom: "100px",
-            height: logoImage === logo1 ? "113px" : "260px",
-            width: logoImage === logo1 ? "283px" : "269px",
+            height: logoImage === logo1 ? "113px" : "304px",
+            width: logoImage === logo1 ? "283px" : "610px",
           }}
         />
         <p className="error-message">
