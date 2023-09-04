@@ -17,7 +17,6 @@ const PatientList = () => {
   const currentURL = window.location.href;
   console.log("URL completa:", currentURL);
   
-
   let logoImage;
   if (currentURL.includes("apresentacaohra")) {
     logoImage = logo2;
