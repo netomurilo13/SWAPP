@@ -44,6 +44,8 @@ const PatientList = () => {
     setButtonClicked(true);
   };
 
+  
+
   const encodeParameter = encodeURIComponent(parameter);
   const taruma = "%7B%0A%22group%22%20%3A%20%22Tarum%C3%A3%22%0A%7D";
   const i9med = "%7B%0A%22group%22%20%3A%20%22i9med%22%0A%7D";
